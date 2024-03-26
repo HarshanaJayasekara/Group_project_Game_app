@@ -1,0 +1,86 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	/* @apply h-full overflow-hidden; */
+}
+
+html {
+	scrollbar-color: #ff4d4d #ffffff3c; /* thumb and track */
+}
+
+.dark html {
+	scrollbar-color: #ffffff #ffffff9d; /* thumb and track */
+}
+
+/* Custom classes */
+
+.debug-focus *:focus {
+	outline: 2px solid red !important;
+}
+
+.mouse-sensor-left-edge {
+	@apply fixed left-0 top-0 z-50 h-screen bg-transparent;
+	width: 50px; /* Adjust the width as needed */
+}
+
+/* For the scrollbar itself */
+::-webkit-scrollbar {
+	width: 12px; /* or any desired size */
+}
+
+/* For the scrollbar track */
+.dark ::-webkit-scrollbar-track {
+	background-color: #ff07079d !important;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ffffff3c !important;
+}
+
+/* For the handle */
+.dark ::-webkit-scrollbar-thumb {
+	background-color: #ffffff !important; /* any color */
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #ff4d4d !important; /* White thumb color */
+}
+/* Handle on hover */
+.dark ::-webkit-scrollbar-thumb:hover {
+	background-color: #ffffff2d !important; /* any color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #ffffff6f !important; /* any color */
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #111;
+	color: #eee;
+	font: caption;
+}
+
+canvas {
+	/* And see postBoot() in JS */
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	/* <https://caniuse.com/#feat=object-fit> */
+}
+
+#version {
+	position: absolute;
+	left: 5px;
+	top: 605px;
+}
